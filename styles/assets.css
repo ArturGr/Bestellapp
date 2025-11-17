@@ -475,6 +475,9 @@ html{
 @media (max-width: 767.99px) {
     section#cart.cart{
         display: none;
+        div.button_up{
+            display: none;
+        }
     }
 html {
     main {
@@ -554,6 +557,10 @@ html {
             a{
                 width: 34px;
             }
+        }
+        div.button_cart:hover{
+            -webkit-filter: drop-shadow(1px 1px 5px var(--black));
+            filter: drop-shadow(1px 1px 1px var(--black));
         }
     }
 }

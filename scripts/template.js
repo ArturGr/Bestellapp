@@ -175,17 +175,18 @@ const BUTTON_UP = () =>`
         <a href="#">
             <img src="./assets/img/to_up.png" alt="zum Seitenanfang">
         </a>
-         <span class="tooltiptext">zum Seitenanfang</span>
+        <span class="tooltiptext">zum Seitenanfang</span>
     </div>
 `;
 
 const BUTTON_CART = () =>`
-    <div class="button_cart"">
+    <div class="button_cart" id="button_cart">
         <span id = "button_cart_responsive" onclick="cartShow()">Warenkorb (0.00€)</span>
-        <div class="button_up">
+        <div class="button_up tooltip">
         <a href="#">
             <img src="./assets/img/to_up.png" alt="up">
         </a>
+        <span class="tooltiptext">zum Seitenanfang</span>
         </div>
     </div>    
 `;
@@ -201,3 +202,8 @@ const ORDERED_WINDOW = () =>`
     </dialog>     
 `;
 
+const BUTTON_BACK_TO_ORDERING = () =>`
+    <div class="button_cart" id="button_cart_test">
+        <span onclick="cartClose()">Züruck zum einkaufen</span>        
+    </div>   
+`;

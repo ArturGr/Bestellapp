@@ -108,6 +108,7 @@ function desserts(){
 function cartGenerator(){
     const CART_GENERATOR_REF = document.getElementById("main_wrapper");
     CART_GENERATOR_REF.innerHTML += CART_TEMPLATE();
+    document.getElementById("cart").innerHTML += BUTTON_BACK_TO_ORDERING();
     cartRender();
 }
 
@@ -142,12 +143,27 @@ function cartRender(){
 }
 
 function cartShow(){
-    console.log("click"); //TO DO
-    
+    console.log("click");
+    document.getElementById("cart").style.display = "unset";
+    document.getElementById("cart").style.position = "fixed";
+    document.getElementById("cart").style.width = "100vw";
+    document.getElementById("cart").style.height = "100vh";
+    document.getElementById("cart").style.background = "var(--white)";
+    document.getElementById("cart").style.padding = "20px"
+    document.body.style.overflow = "hidden";
+    document.getElementById("button_cart").style.display = "none";
 }
 
-function windowOrderOrdered(){
-    console.log("ordered"); //TO DO
+function cartClose(){
+    document.getElementById("cart").style.display = "";
+    document.getElementById("cart").style.position = "sticky";
+    document.getElementById("cart").style.width = "300px";
+    document.getElementById("cart").style.height = "40vw";
+    document.getElementById("cart").style.background = "";
+    document.getElementById("cart").style.padding = ""
+    document.body.style.overflow = "unset";
+    document.getElementById("button_cart").style.display = "flex";
+    document.getElementById("button_cart_test").display = "none";
 }
 
 function buttonUpShow(){

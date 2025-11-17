@@ -22,7 +22,7 @@ a {
   visibility: hidden;
   width: 120px;
   background-color: black;
-  color: #fff;
+  color: #fff !important;
   text-align: center;
   border-radius: 6px;
   padding: 5px 0;
