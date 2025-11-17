@@ -13,7 +13,7 @@ const SECTION_RESTAURANT_NAME_TEMPLATE = () => `
                 <div class="restaurant_title">
                     <h1>Daily Dose</h1>
                     <p>Bewertung (4 von 5 Sternen)</p>
-                    <p>Nur heute: Kostenloser Versand für Bestellungen über 20 € ! (Standardkosten: 5€)</p>
+                    <p>Nur heute: Kostenloser Versand für Bestellungen über 20€ ! (Standardkosten: 5€)</p>
                 </div>
             <div class="navigation">
             <div>
@@ -177,7 +177,7 @@ const BUTTON_UP = () =>`
 
 const BUTTON_CART = () =>`
     <div class="button_cart"">
-        <span id = "button_cart_responsive" onclick="cartShow()"></span>
+        <span id = "button_cart_responsive" onclick="cartShow()">Warenkorb (0.00€)</span>
         <div class="button_up">
         <a href="#">
             <img src="./assets/img/to_up.png" alt="up">

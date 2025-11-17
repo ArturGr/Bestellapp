@@ -388,7 +388,7 @@ html{
                         img{
                             height: 128px;
                             margin-top: 16px;
-                        }
+                        }   
                     }
             }
             div.cart_sum{
@@ -434,6 +434,10 @@ html{
             }
             img{
                 height: 34px;
+            }
+            img:hover{
+                -webkit-filter: drop-shadow(1px 1px 5px var(--black));
+                filter: drop-shadow(1px 1px 1px var(--black));
             }
         }
         div.button_cart{
