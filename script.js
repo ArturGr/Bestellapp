@@ -196,9 +196,7 @@ function sumOfProductPrice(){
     for (let j = 0; j < sumOfDishesTemp.length; j++) {
         sumOfDishesPrice += sumOfDishesTemp[j];
     }
-    
     deliveryPriceSet();
-    totalPrice = sumOfDishesPrice + deliveryPrice;
     cleaningPriceValues();
     setNewPriceValues();
 }
@@ -207,12 +205,15 @@ function cleaningPriceValues(){
     document.getElementById("cart_subtotal").innerHTML = "";
     document.getElementById("cart_delivery").innerHTML = "";
     document.getElementById("cart_total").innerHTML = "";
+    document.getElementById("button_cart_responsive").innerHTML = "";
 }
 
 function setNewPriceValues(){
+    totalPrice = sumOfDishesPrice + deliveryPrice;
     document.getElementById("cart_subtotal").innerHTML = `${sumOfDishesPrice.toFixed(2)}€`;
     document.getElementById("cart_delivery").innerHTML = `${deliveryPrice.toFixed(2)}€`;
     document.getElementById("cart_total").innerHTML = `${totalPrice.toFixed(2)}€`;
+    document.getElementById("button_cart_responsive").innerHTML = `Warenkorb (${totalPrice.toFixed(2)}€)`;
 }
 
 function deliveryPriceSet(){
@@ -239,6 +240,11 @@ function removingDishesFromCart(index) {
 
 function deleteDishFromCart(index) {
     PRODUCT_IN_CART.splice(index, 1);
+    if(PRODUCT_IN_CART.length == 0){
+        sumOfDishesPrice = 0;
+        deliveryPrice = 0;
+        setNewPriceValues();
+    }
     cartRender();
 }
 
