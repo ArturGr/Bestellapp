@@ -45,6 +45,7 @@ function mainContainer() {
 function restaurantContentGenerator(){
     sectionRestaurantName();
     sectionMainMenu();
+    document.getElementById("main_wrapper").innerHTML += ORDERED_WINDOW();
 }
 
 function sectionRestaurantName(){
@@ -130,18 +131,23 @@ function cartRender(){
     if (PRODUCT_IN_CART.length == 0) {
         CART_RENDER_REF.innerHTML += CART_EMPTY();
         document.getElementById("cart_empty").style.alignItems = "center";
+        buttonOrderShow();
     }
     else{
         for (let i = 0; i < PRODUCT_IN_CART.length; i++) {
             CART_RENDER_REF.innerHTML += CART_ITEM_TEMPLATE(i);
         }
-        sumOfProductPrice();  
+        sumOfProductPrice();
     }
 }
 
 function cartShow(){
     console.log("click"); //TO DO
     
+}
+
+function windowOrderOrdered(){
+    console.log("ordered"); //TO DO
 }
 
 function buttonUpShow(){
@@ -152,6 +158,15 @@ function buttonUpShow(){
 function buttonCartShow(value){
     const BUTTON_CART_SHOW_REF = document.getElementById("main_wrapper");
     BUTTON_CART_SHOW_REF.parentNode.innerHTML += BUTTON_CART(value);
+}
+
+function buttonOrderShow() {
+    const BUTTON_ORDER_REF = document.getElementById("button_order");
+    if(PRODUCT_IN_CART.length < 1){
+        BUTTON_ORDER_REF.classList.add("hidden");
+    } else{
+        BUTTON_ORDER_REF.classList.remove("hidden");
+    }
 }
 
 function addingMainDishes(id){
@@ -199,6 +214,7 @@ function sumOfProductPrice(){
     deliveryPriceSet();
     cleaningPriceValues();
     setNewPriceValues();
+    buttonOrderShow();
 }
 
 function cleaningPriceValues(){
@@ -248,6 +264,23 @@ function deleteDishFromCart(index) {
     cartRender();
 }
 
+function reset(){
+    const DIALOGREF = document.getElementById("myDialog"); 
+    PRODUCT_IN_CART.length = 0;
+    totalPrice = 0;
+    deliveryPrice = 0;
+    sumOfDishesPrice = 0;
+    setNewPriceValues();
+    DIALOGREF.close();
+    DIALOGREF.classList.remove("opened");
+    cartRender();
+}
+
+function order() {
+    const DIALOGREF = document.getElementById("myDialog");
+    DIALOGREF.showModal();
+    DIALOGREF.classList.add("opened");
+}
 
 /*
 //zapisywanie tylko tego, co jest w koszyku

@@ -423,6 +423,30 @@ html{
             }
         }
 
+        div.button_order{
+            background-color: var(--cart_button_background);
+            height: 50px;
+            width: 150px;
+            margin: 10px auto 10px auto;
+            border-radius: 25px;
+            border: 4px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            flex-wrap: nowrap;
+            flex-direction: row;
+            cursor: pointer;
+            span{
+                color: var(--orange);
+                font-size: 20px;
+                
+            }
+        }
+        div.button_order:hover{
+            -webkit-filter: drop-shadow(1px 1px 5px var(--black));
+            filter: drop-shadow(1px 1px 1px var(--black));
+        }
+
         div.button_up{
             display: flex;
             align-items: center;
@@ -442,7 +466,6 @@ html{
         }
         div.button_cart{
             display: none;
-
         }
     }
 }

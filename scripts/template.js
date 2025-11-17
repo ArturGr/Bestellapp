@@ -132,6 +132,9 @@ const CART_TEMPLATE = () =>`
                 <p id="cart_total"><b>0,00€</b></p>
             </div>
         </div>
+        <div id="button_order" class="button_order" onclick="order()">
+            <span>Bestellen</span>
+        </div>
     </section>
 `;
 
@@ -168,10 +171,11 @@ const CART_EMPTY = () =>`
 `;
 
 const BUTTON_UP = () =>`
-    <div class="button_up">
+    <div class="button_up tooltip">
         <a href="#">
-            <img src="./assets/img/to_up.png" alt="up">
+            <img src="./assets/img/to_up.png" alt="zum Seitenanfang">
         </a>
+         <span class="tooltiptext">zum Seitenanfang</span>
     </div>
 `;
 
@@ -185,3 +189,15 @@ const BUTTON_CART = () =>`
         </div>
     </div>    
 `;
+
+const ORDERED_WINDOW = () =>`
+    <dialog id="myDialog">
+        <h2>Der Testauftrag wurde angenommen.</h2>
+        <p>Vielen Dank für Ihre Testbestellung.</p> 
+        <p>Keine Sorge, es wurde nicht weitergeleitet.</p>
+        <div>
+            <a href="#" onclick="reset()">Klicken Sie hier, um zur Startseite zurückzukehren.</a>
+        </div>
+    </dialog>     
+`;
+
