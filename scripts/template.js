@@ -179,9 +179,9 @@ const BUTTON_UP = () => `
     </div>
 `;
 
-const BUTTON_CART = () => `
+const BUTTON_CART = (totalPrice) => `
     <div class="button_cart" id="button_cart">
-        <span id = "button_cart_responsive" onclick="cartShow()">Warenkorb (0.00€)</span>
+        <span id = "button_cart_responsive" onclick="cartShow()">Warenkorb (${totalPrice}€)</span>
         <div class="button_up tooltip">
         <a href="#">
             <img src="./assets/img/to_up.png" alt="up">

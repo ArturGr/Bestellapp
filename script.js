@@ -1,6 +1,5 @@
-const DATA_ARRAY = [];
 let myDataLocal = [];
-
+let myPriceLocal = 0;
 const MAIN_DISHES = [];
 const SOUP = [];
 const DESSERTS = [];
@@ -11,30 +10,21 @@ let sumOfDishesPrice = 0;
 var screenWidthToggle = window.matchMedia("(max-width: 767.99px)");
 
 function init() {
-    //dataImport();
-    //checkingData();
+    dataImport();
     mainContainer();
 }
-/*
+
 function dataImport() {
     getFromLocalStorage();
     if (myDataLocal.length > 0) {
         for (let i = 0; i < myDataLocal.length; i++) {
-            DATA_ARRAY.push(myDataLocal[i]);
+            PRODUCT_IN_CART.push(myDataLocal[i]);
         }
+        totalPrice = myPriceLocal;
     } else {
-        for (let i = 0; i < dishes.length; i++) {
-            DATA_ARRAY.push(dishes[i]);
-        }
+        return;
     }
 }
-
-function checkingData() {
-    if (DATA_ARRAY.length == 0) {
-        return console.log("Error: data array is empty.")
-    }
-}
-*/
 
 function mainContainer() {
     const MAIN_CONTAINER_REF = document.getElementById("main_wrapper");
@@ -125,6 +115,7 @@ function addToCart(index) {
     } else {
         return;
     }
+    saveData();
 }
 
 function cartRender() {
@@ -173,9 +164,9 @@ function buttonUpShow() {
     BUTTON_UP_REF.innerHTML += BUTTON_UP();
 }
 
-function buttonCartShow(value) {
+function buttonCartShow(totalPrice) {
     const BUTTON_CART_SHOW_REF = document.getElementById("main_wrapper");
-    BUTTON_CART_SHOW_REF.parentNode.innerHTML += BUTTON_CART(value);
+    BUTTON_CART_SHOW_REF.parentNode.innerHTML += BUTTON_CART(totalPrice);
 }
 
 function buttonOrderShow() {
@@ -236,18 +227,26 @@ function sumOfProductPrice() {
 }
 
 function cleaningPriceValues() {
+    const BUTTON_CART_RESPONSIVE_REF = document.getElementById("button_cart_responsive");
     document.getElementById("cart_subtotal").innerHTML = "";
     document.getElementById("cart_delivery").innerHTML = "";
     document.getElementById("cart_total").innerHTML = "";
-    document.getElementById("button_cart_responsive").innerHTML = "";
+    if(BUTTON_CART_RESPONSIVE_REF != null) {
+        BUTTON_CART_RESPONSIVE_REF.innerHTML = "";
+    }
+    
 }
 
 function setNewPriceValues() {
+    const BUTTON_CART_RESPONSIVE_REF = document.getElementById("button_cart_responsive");
     totalPrice = sumOfDishesPrice + deliveryPrice;
     document.getElementById("cart_subtotal").innerHTML = `${sumOfDishesPrice.toFixed(2)}€`;
     document.getElementById("cart_delivery").innerHTML = `${deliveryPrice.toFixed(2)}€`;
     document.getElementById("cart_total").innerHTML = `${totalPrice.toFixed(2)}€`;
-    document.getElementById("button_cart_responsive").innerHTML = `Warenkorb (${totalPrice.toFixed(2)}€)`;
+    if(BUTTON_CART_RESPONSIVE_REF != null){
+        BUTTON_CART_RESPONSIVE_REF.innerHTML = `Warenkorb (${totalPrice.toFixed(2)}€)`;
+    }
+    
 }
 
 function deliveryPriceSet() {
@@ -261,6 +260,7 @@ function deliveryPriceSet() {
 function addingDishesInCart(index) {
     PRODUCT_IN_CART[index].amount++;
     cartRender();
+    saveData();
 }
 
 function removingDishesFromCart(index) {
@@ -270,6 +270,7 @@ function removingDishesFromCart(index) {
         PRODUCT_IN_CART[index].amount--;
     }
     cartRender();
+    saveData();
 }
 
 function deleteDishFromCart(index) {
@@ -280,6 +281,7 @@ function deleteDishFromCart(index) {
         setNewPriceValues();
     }
     cartRender();
+    saveData();
 }
 
 function order() {
@@ -301,11 +303,13 @@ function reset() {
     document.body.style.overflow = "auto";
     cartClose();
     cartRender();
+    saveData();
 }
 
 function myFunction(screenWidthToggle) {
     if (screenWidthToggle.matches) {
         document.getElementById("button_cart").style.display = "flex";
+        document.getElementById("button_cart_responsive").innerHTML = `Warenkorb (${totalPrice.toFixed(2)}€)`;
     } else {
         cartClose();
         document.getElementById("button_cart").style.display = "none";
@@ -316,15 +320,6 @@ screenWidthToggle.addEventListener("change", function () {
     myFunction(screenWidthToggle);
 });
 
-
-
-
-
-
-
-
-/*
-//zapisywanie tylko tego, co jest w koszyku
 function saveData() {
     if (myDataLocal != null) {
         saveToLocalStorage();
@@ -334,17 +329,16 @@ function saveData() {
 }
 
 function saveToLocalStorage() {
-    localStorage.setItem("myDataLocal", JSON.stringify(DATA_ARRAY));
-    localStorage.setItem("checkboxStatus", JSON.stringify(FAVORITE_CHECKBOX_REF.checked));
+    localStorage.setItem("myDataLocal", JSON.stringify(PRODUCT_IN_CART));
+    localStorage.setItem("myPriceLocal", JSON.stringify(totalPrice))
 }
 
 function getFromLocalStorage() {
     let myData = JSON.parse(localStorage.getItem("myDataLocal"));
-    let myCheckbox = JSON.parse(localStorage.getItem("checkboxStatus"));
+    let myPrice = JSON.parse(localStorage.getItem("myPriceLocal"));
     if (myData == null) {
         return;
     }
     myDataLocal = myData;
-    checkboxStatus = myCheckbox;
+    myPriceLocal = myPrice;
 }
-*/
