@@ -1,7 +1,7 @@
 html {
     main {
         div.restaurant_content {
-            width: calc(100% - 300px);
+            width: calc(100% - 200px);
             border-right: 4px solid var(--border-color);
         }
 
@@ -375,7 +375,7 @@ html {
         section#cart.cart {
             position: sticky;
             top: 0;
-            width: 300px;
+            width: 200px;
             height: 40vw;
 
             div.cart_title {
@@ -571,7 +571,7 @@ html {
 }
 
 @media (max-width: 767.99px) {
-    
+
     section#cart.cart {
         display: none;
 
@@ -602,6 +602,10 @@ html {
                             justify-content: flex-start;
                             align-content: flex-start;
                         }
+
+                        div.main_dishes_description{
+                            width: 100%;
+                        }
                     }
                 }
 
@@ -619,6 +623,10 @@ html {
                             justify-content: flex-start;
                             align-content: flex-start;
                         }
+
+                        div.soup_description{
+                            width: 100%;
+                        }
                     }
                 }
 
@@ -635,6 +643,10 @@ html {
                             align-items: center;
                             justify-content: flex-start;
                             align-content: flex-start;
+                        }
+
+                        div.desserts_description{
+                            width: 100%;
                         }
                     }
                 }

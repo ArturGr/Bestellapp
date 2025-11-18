@@ -1,14 +1,7 @@
 :root {
     --black: #000000;
     --white: #ffffff;
-    --blue-header: #0A222C;
     --orange: #FF8000;
-    --blue-main: #071820;
-    --blue-section-separator: #63A2BD;
-    --red-price: #E75F53;
-    --red-like: #FE5B4E;
-    --blue-input-text: #124758;
-    --blue-input-placeholder: #6E95A3;
     --border-color: rgb(15, 30, 45, 0.1);
     --price-color: rgb(15, 30, 45, 0.75);
     --cart_button_background: #D9D4C8;
@@ -175,7 +168,7 @@ footer {
 }
 
 @media (min-width: 768px) and (max-width: 1280.9px) {
-    
+
     html {
         main {
             div.wrapper {
@@ -210,7 +203,7 @@ footer {
 @media (max-width: 767.99px) {
 
     .tooltiptext {
-        left: -50px;
+        left: -90px;
     }
 
     html {

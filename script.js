@@ -157,7 +157,7 @@ function cartShow() {
 function cartClose() {
     document.getElementById("cart").style.display = "";
     document.getElementById("cart").style.position = "sticky";
-    document.getElementById("cart").style.width = "300px";
+    document.getElementById("cart").style.width = "200px";
     document.getElementById("cart").style.height = "40vw";
     document.getElementById("cart").style.background = "";
     document.getElementById("cart").style.padding = ""
