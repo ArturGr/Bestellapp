@@ -1,25 +1,29 @@
-html{
-    main{
-        div.restaurant_content{
+html {
+    main {
+        div.restaurant_content {
             border-right: 4px solid var(--border-color);
         }
-        section.restaurant_name{
+
+        section.restaurant_name {
             width: 100%;
             max-height: 360px;
 
-            div{
+            div {
                 max-height: 150px;
-                img{
+
+                img {
                     width: 100%;
                     max-height: 150px;
                     object-fit: cover;
                 }
-                div.restaurant_logo{
+
+                div.restaurant_logo {
                     position: relative;
                     bottom: 40px;
                     left: 75%;
                     width: fit-content;
-                    img{
+
+                    img {
                         height: 70px;
                         width: 70px;
                         border-radius: 35px;
@@ -27,30 +31,36 @@ html{
                     }
                 }
             }
-            div.restaurant_title{
+
+            div.restaurant_title {
                 padding: 8px 0px;
-                p{
+
+                p {
                     text-align: left;
                     color: var(--orange);
                     padding-top: 8px;
                     font-size: 16px;
                 }
             }
-            div.navigation{
+
+            div.navigation {
                 padding: 8px 0px;
                 display: flex;
                 gap: 10px;
                 background-color: var(--border-color);
-                div{
+
+                div {
                     display: flex;
                     align-content: center;
                     justify-content: flex-start;
                     align-items: center;
-                    img{
+
+                    img {
                         height: 16px;
                     }
                 }
-                nav{
+
+                nav {
                     font-size: 16px;
                     display: flex;
                     align-content: center;
@@ -59,19 +69,21 @@ html{
                     flex-direction: row;
                     flex-wrap: wrap;
                     gap: 8px;
-                    a{
+
+                    a {
                         text-decoration: none;
                         color: var(--black);
                         cursor: pointer;
                     }
-                    a:hover{
+
+                    a:hover {
                         text-decoration: underline;
                     }
                 }
             }
         }
 
-        section.main_menu{
+        section.main_menu {
             width: 100%;
             display: flex;
             flex-direction: column;
@@ -79,351 +91,428 @@ html{
             align-content: flex-start;
             align-items: flex-start;
             justify-content: center;
-            div#main_dishes.main_dishes{
+
+            div#main_dishes.main_dishes {
                 width: 100%;
-                div.foto_main_dishes{
+
+                div.foto_main_dishes {
                     height: 150px;
-                    img{
+
+                    img {
                         width: 100%;
                         height: 150px;
                         object-fit: cover;
-                    };
+                    }
+
+                    ;
                 }
-                div.title_main_dishes{
-                    h2{
+
+                div.title_main_dishes {
+                    h2 {
                         text-align: left;
                         color: var(--black);
                         font-size: 24px;
                         padding: 4px 0px 8px 16px;
                     }
                 }
-                div.main_dishes_list{
-                        height: 108px;
-                        border: 4px solid var(--border-color);
-                        border-radius: 12px;
-                        display: flex;
-                        flex-direction: row;
-                        flex-wrap: nowrap;
-                        align-content: center;
-                        justify-content: space-between;
-                        align-items: center;
-                        margin: 4px 0px;
-                        div.main_dishes_foto{
-                            height: 100px;
-                            display: flex;
-                            gap: 8px;
-                            img{
-                                height: 100px;
-                                border-radius: 8px;
-                            }
-                        }
-                        div.main_dishes_description{
-                            display: flex;
-                            justify-content: flex-start;
-                            align-items: flex-start;
-                            flex-direction: column;
-                            flex-wrap: nowrap;
-                            height: 100px;
-                            padding: 4px;
-                            gap: 4px;
-                            h3{
-                                text-align: left;
-                                font-size: 16px;
-                                font-weight: 600;
-                            }
-                            p{
-                                text-align: left;
-                                font-size: 16px;
-                                font-weight: 400;
-                            }
-                            p.price_value{
-                             color: var(--orange);   
-                            }
-                        }
-                        div.add_icon{
-                            height: 100px;
-                            img{
-                                height: 30px;
-                                border-left: 2px solid var(--border-color);
-                                border-bottom: 2px solid var(--border-color);
-                                cursor: pointer;
-                            }
-                            img:hover{
-                                -webkit-filter: drop-shadow(1px 1px 5px var(--black));
-                                filter: drop-shadow(1px 1px 1px var(--black));
-                            }
-                        }
-                    }
-                }
 
-            div#soup.soup{
-                width: 100%;
-                margin-top: 16px;
-                div.foto_soup{
-                    height: 150px;
-                    img{
-                        width: 100%;
-                        height: 150px;
-                        object-fit: cover;
-                    };
-                }
-                div.title_soup{
-                    h2{
-                        text-align: left;
-                        color: var(--black);
-                        font-size: 24px;
-                        padding: 4px 0px 8px 16px;
-                    }
-                }
-                div.soup_list{
-                        height: 108px;
-                        border: 4px solid var(--border-color);
-                        border-radius: 12px;
-                        display: flex;
-                        flex-direction: row;
-                        flex-wrap: nowrap;
-                        align-content: center;
-                        justify-content: space-between;
-                        align-items: center;
-                        margin: 4px 0px;
-                        div.soup_foto{
-                            height: 100px;
-                            display: flex;
-                            gap: 8px;
-                            img{
-                                height: 100px;
-                                border-radius: 8px;
-                            }
-                        }
-                        div.soup_description{
-                            display: flex;
-                            justify-content: flex-start;
-                            align-items: flex-start;
-                            flex-direction: column;
-                            flex-wrap: nowrap;
-                            height: 100px;
-                            padding: 4px;
-                            gap: 4px;
-                            h3{
-                                text-align: left;
-                                font-size: 16px;
-                                font-weight: 600;
-                            }
-                            p{
-                                text-align: left;
-                                font-size: 16px;
-                                font-weight: 400;
-                            }
-                            p.price_value{
-                             color: var(--orange);   
-                            }
-                        }
-                        div.add_icon{
-                            height: 100px;
-                            img{
-                                height: 30px;
-                                border-left: 2px solid var(--border-color);
-                                border-bottom: 2px solid var(--border-color);
-                                cursor: pointer;
-                            }
-                            img:hover{
-                                -webkit-filter: drop-shadow(1px 1px 5px var(--black));
-                                filter: drop-shadow(1px 1px 1px var(--black));
-                            }
-                        }
-                    }
-                }
-
-            div#desserts.desserts{
-                width: 100%;
-                margin-top: 16px;
-                div.foto_desserts{
-                    height: 150px;
-                    img{
-                        width: 100%;
-                        height: 150px;
-                        object-fit: cover;
-                    };
-                }
-                div.title_desserts{
-                    h2{
-                        text-align: left;
-                        color: var(--black);
-                        font-size: 24px;
-                        padding: 4px 0px 8px 16px;
-                    }
-                }
-                div.desserts_list{
-                        height: 108px;
-                        border: 4px solid var(--border-color);
-                        border-radius: 12px;
-                        display: flex;
-                        flex-direction: row;
-                        flex-wrap: nowrap;
-                        align-content: center;
-                        justify-content: space-between;
-                        align-items: center;
-                        margin: 4px 0px;
-                        div.desserts_foto{
-                            height: 100px;
-                            display: flex;
-                            gap: 8px;
-                            img{
-                                height: 100px;
-                                border-radius: 8px;
-                            }
-                        }
-                        div.desserts_description{
-                            display: flex;
-                            justify-content: flex-start;
-                            align-items: flex-start;
-                            flex-direction: column;
-                            flex-wrap: nowrap;
-                            height: 100px;
-                            padding: 4px;
-                            gap: 4px;
-                            h3{
-                                text-align: left;
-                                font-size: 16px;
-                                font-weight: 600;
-                            }
-                            p{
-                                text-align: left;
-                                font-size: 16px;
-                                font-weight: 400;
-                            }
-                            p.price_value{
-                                color: var(--orange);   
-                            }
-                        }
-                        div.add_icon{
-                            height: 100px;
-                            img{
-                                height: 30px;
-                                border-left: 2px solid var(--border-color);
-                                border-bottom: 2px solid var(--border-color);
-                                cursor: pointer;
-                            }
-                            img:hover{
-                                -webkit-filter: drop-shadow(1px 1px 5px var(--black));
-                                filter: drop-shadow(1px 1px 1px var(--black));
-                            }
-                        }
-                    }
-                }    
-        } 
-
-        section#cart.cart{
-            position: sticky;
-            top: 0;
-            width: 300px;
-            height: 40vw;
-            div.cart_title{
-                width: 100%;
-                text-align: center;
-                border-bottom: 4px solid var(--border-color);
-                h2{
-                    padding: 32px 0px;
-                }
-            }
-            div.cart_dishes_list{
-                    max-height: 350px;
-                    overflow-y: auto;
-                    padding-top: 20px;
+                div.main_dishes_list {
+                    height: 108px;
+                    border: 4px solid var(--border-color);
+                    border-radius: 12px;
                     display: flex;
-                    flex-direction: column;
+                    flex-direction: row;
                     flex-wrap: nowrap;
-                    justify-content: center;
-                    align-items: flex-start;
-                    border-bottom: 4px solid var(--border-color);
-                    div.cart_item_list{
-                        width: 100%;
-                        padding: 8px 8px;
+                    align-content: center;
+                    justify-content: space-between;
+                    align-items: center;
+                    margin: 4px 0px;
+
+                    div.main_dishes_foto {
+                        height: 100px;
                         display: flex;
-                        flex-wrap: nowrap;
-                        flex-direction: column;
+                        gap: 8px;
+
+                        img {
+                            height: 100px;
+                            border-radius: 8px;
+                        }
+                    }
+
+                    div.main_dishes_description {
+                        display: flex;
+                        justify-content: flex-start;
                         align-items: flex-start;
-                        justify-content: center;
-                        div.cart_item_title{
-                            width: 100%;
-                            p{
-                                font-weight: 600;
-                                color: var(--black);
-                            }
+                        flex-direction: column;
+                        flex-wrap: nowrap;
+                        height: 100px;
+                        padding: 4px;
+                        gap: 4px;
+
+                        h3 {
+                            text-align: left;
+                            font-size: 16px;
+                            font-weight: 600;
                         }
-                        div.cart_item_menu{
-                            width: 100%;
-                            display: flex;
-                            flex-direction: row;
-                            flex-wrap: nowrap;
-                            justify-content: space-between;
-                            align-items: center;
-                            img{
-                                cursor: pointer;
-                                height: 16px;
-                            }
-                            img:hover{
-                                -webkit-filter: drop-shadow(1px 1px 5px var(--black));
-                                filter: drop-shadow(1px 1px 1px var(--black));
-                            }
-                            div.cart_item_submenu{
-                                display: flex;
-                                flex-direction: row;
-                                flex-wrap: nowrap;
-                                align-items: center;
-                                justify-content: flex-start;
-                                gap: 10px;
-                                p{
-                                    font-size: 16px;
-                                }
-                            }
+
+                        p {
+                            text-align: left;
+                            font-size: 16px;
+                            font-weight: 400;
+                        }
+
+                        p.price_value {
+                            color: var(--orange);
                         }
                     }
-                    div.cart_item_title_empty{
-                        p{
-                            font-size: 18px;
+
+                    div.add_icon {
+                        height: 100px;
+
+                        img {
+                            height: 30px;
+                            border-left: 2px solid var(--border-color);
+                            border-bottom: 2px solid var(--border-color);
+                            cursor: pointer;
                         }
-                    }
-                    div.cart_item_menu_empty{
-                        img{
-                            height: 128px;
-                            margin-top: 16px;
-                        }   
-                    }
-            }
-            div.cart_sum{
-                padding: 8px;
-                display: flex;
-                flex-direction: row;
-                flex-wrap: nowrap;
-                justify-content: space-between;
-                align-items: center;
-                div.price_description{
-                    p{
-                        color: var(--price-color);
-                        text-align: left;
-                        font-size: 16px;
-                        padding: 4px 0px;
-                        b{
-                            color: var(--black);
+
+                        img:hover {
+                            -webkit-filter: drop-shadow(1px 1px 5px var(--black));
+                            filter: drop-shadow(1px 1px 1px var(--black));
                         }
                     }
                 }
-                div.price_values{
-                    p{
-                        color: var(--price-color);
-                        text-align: right;
-                        font-size: 16px;
-                        padding: 4px 0px;
-                        b{
-                            color: var(--black);
+            }
+
+            div#soup.soup {
+                width: 100%;
+                margin-top: 16px;
+
+                div.foto_soup {
+                    height: 150px;
+
+                    img {
+                        width: 100%;
+                        height: 150px;
+                        object-fit: cover;
+                    }
+
+                    ;
+                }
+
+                div.title_soup {
+                    h2 {
+                        text-align: left;
+                        color: var(--black);
+                        font-size: 24px;
+                        padding: 4px 0px 8px 16px;
+                    }
+                }
+
+                div.soup_list {
+                    height: 108px;
+                    border: 4px solid var(--border-color);
+                    border-radius: 12px;
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: nowrap;
+                    align-content: center;
+                    justify-content: space-between;
+                    align-items: center;
+                    margin: 4px 0px;
+
+                    div.soup_foto {
+                        height: 100px;
+                        display: flex;
+                        gap: 8px;
+
+                        img {
+                            height: 100px;
+                            border-radius: 8px;
+                        }
+                    }
+
+                    div.soup_description {
+                        display: flex;
+                        justify-content: flex-start;
+                        align-items: flex-start;
+                        flex-direction: column;
+                        flex-wrap: nowrap;
+                        height: 100px;
+                        padding: 4px;
+                        gap: 4px;
+
+                        h3 {
+                            text-align: left;
+                            font-size: 16px;
+                            font-weight: 600;
+                        }
+
+                        p {
+                            text-align: left;
+                            font-size: 16px;
+                            font-weight: 400;
+                        }
+
+                        p.price_value {
+                            color: var(--orange);
+                        }
+                    }
+
+                    div.add_icon {
+                        height: 100px;
+
+                        img {
+                            height: 30px;
+                            border-left: 2px solid var(--border-color);
+                            border-bottom: 2px solid var(--border-color);
+                            cursor: pointer;
+                        }
+
+                        img:hover {
+                            -webkit-filter: drop-shadow(1px 1px 5px var(--black));
+                            filter: drop-shadow(1px 1px 1px var(--black));
+                        }
+                    }
+                }
+            }
+
+            div#desserts.desserts {
+                width: 100%;
+                margin-top: 16px;
+
+                div.foto_desserts {
+                    height: 150px;
+
+                    img {
+                        width: 100%;
+                        height: 150px;
+                        object-fit: cover;
+                    }
+
+                    ;
+                }
+
+                div.title_desserts {
+                    h2 {
+                        text-align: left;
+                        color: var(--black);
+                        font-size: 24px;
+                        padding: 4px 0px 8px 16px;
+                    }
+                }
+
+                div.desserts_list {
+                    height: 108px;
+                    border: 4px solid var(--border-color);
+                    border-radius: 12px;
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: nowrap;
+                    align-content: center;
+                    justify-content: space-between;
+                    align-items: center;
+                    margin: 4px 0px;
+
+                    div.desserts_foto {
+                        height: 100px;
+                        display: flex;
+                        gap: 8px;
+
+                        img {
+                            height: 100px;
+                            border-radius: 8px;
+                        }
+                    }
+
+                    div.desserts_description {
+                        display: flex;
+                        justify-content: flex-start;
+                        align-items: flex-start;
+                        flex-direction: column;
+                        flex-wrap: nowrap;
+                        height: 100px;
+                        padding: 4px;
+                        gap: 4px;
+
+                        h3 {
+                            text-align: left;
+                            font-size: 16px;
+                            font-weight: 600;
+                        }
+
+                        p {
+                            text-align: left;
+                            font-size: 16px;
+                            font-weight: 400;
+                        }
+
+                        p.price_value {
+                            color: var(--orange);
+                        }
+                    }
+
+                    div.add_icon {
+                        height: 100px;
+
+                        img {
+                            height: 30px;
+                            border-left: 2px solid var(--border-color);
+                            border-bottom: 2px solid var(--border-color);
+                            cursor: pointer;
+                        }
+
+                        img:hover {
+                            -webkit-filter: drop-shadow(1px 1px 5px var(--black));
+                            filter: drop-shadow(1px 1px 1px var(--black));
                         }
                     }
                 }
             }
         }
 
-        div.button_order{
+        section#cart.cart {
+            position: sticky;
+            top: 0;
+            width: 300px;
+            height: 40vw;
+
+            div.cart_title {
+                width: 100%;
+                text-align: center;
+                border-bottom: 4px solid var(--border-color);
+
+                h2 {
+                    padding: 32px 0px;
+                }
+            }
+
+            div.cart_dishes_list {
+                max-height: 350px;
+                overflow-y: auto;
+                display: flex;
+                flex-direction: column;
+                flex-wrap: nowrap;
+                justify-content: flex-start;
+                align-items: flex-start;
+                border-bottom: 4px solid var(--border-color);
+
+                div.cart_item_list {
+                    width: 100%;
+                    padding: 8px 8px;
+                    display: flex;
+                    flex-wrap: nowrap;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    justify-content: center;
+
+                    div.cart_item_title {
+                        width: 100%;
+
+                        p {
+                            font-weight: 600;
+                            color: var(--black);
+                        }
+                    }
+
+                    div.cart_item_menu {
+                        width: 100%;
+                        display: flex;
+                        flex-direction: row;
+                        flex-wrap: nowrap;
+                        justify-content: space-between;
+                        align-items: center;
+
+                        img {
+                            cursor: pointer;
+                            height: 16px;
+                        }
+
+                        img:hover {
+                            -webkit-filter: drop-shadow(1px 1px 5px var(--black));
+                            filter: drop-shadow(1px 1px 1px var(--black));
+                        }
+
+                        div.cart_item_submenu {
+                            display: flex;
+                            flex-direction: row;
+                            flex-wrap: nowrap;
+                            align-items: center;
+                            justify-content: flex-start;
+                            gap: 10px;
+
+                            p {
+                                font-size: 16px;
+                            }
+                        }
+                    }
+                }
+
+                div.cart_item_title_empty {
+                    p {
+                        font-size: 18px;
+                    }
+                }
+
+                div.cart_item_menu_empty {
+                    img {
+                        height: 128px;
+                        margin-top: 16px;
+                    }
+                }
+            }
+
+            div.cart_sum {
+                padding: 8px;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                justify-content: space-between;
+                align-items: center;
+
+                div.price_description {
+                    p {
+                        color: var(--price-color);
+                        text-align: left;
+                        font-size: 16px;
+                        padding: 4px 0px;
+
+                        b {
+                            color: var(--black);
+                        }
+                    }
+                }
+
+                div.price_values {
+                    p {
+                        color: var(--price-color);
+                        text-align: right;
+                        font-size: 16px;
+                        padding: 4px 0px;
+
+                        b {
+                            color: var(--black);
+                        }
+                    }
+                }
+            }
+
+            div#button_cart_resp.button_cart {
+                margin-left: auto;
+                margin-right: auto;
+
+                span {
+                    width: 100%;
+                    height: 100%;
+                    text-align: center;
+                    padding: 10px 0px;
+                    margin: 0;
+                }
+
+            }
+        }
+
+        div.button_order {
             background-color: var(--cart_button_background);
             height: 50px;
             width: 150px;
@@ -436,133 +525,153 @@ html{
             flex-wrap: nowrap;
             flex-direction: row;
             cursor: pointer;
-            span{
+
+            span {
                 color: var(--orange);
                 font-size: 20px;
-                
+
             }
         }
-        div.button_order:hover{
+
+        div.button_order:hover {
             -webkit-filter: drop-shadow(1px 1px 5px var(--black));
             filter: drop-shadow(1px 1px 1px var(--black));
         }
 
-        div.button_up{
+        div.button_up {
             display: flex;
             align-items: center;
             justify-content: center;
             flex-wrap: nowrap;
             flex-direction: row;
-            a{
+
+            a {
                 height: 34px;
             }
-            img{
+
+            img {
                 height: 34px;
             }
-            img:hover{
+
+            img:hover {
                 -webkit-filter: drop-shadow(1px 1px 5px var(--black));
                 filter: drop-shadow(1px 1px 1px var(--black));
             }
         }
-        div.button_cart{
+
+        div.button_cart {
             display: none;
+
+            span#button_cart_responsive {
+                width: 100%;
+            }
         }
     }
 }
-
-@media (min-width: 768px) and (max-width: 1280.9px) {}
 
 @media (max-width: 767.99px) {
-    section#cart.cart{
+    section#cart.cart {
         display: none;
-        div.button_up{
+
+        div.button_up {
             display: none;
         }
     }
-html {
-    main {
-        div.restaurant_content{
-            border-right: unset;
-        }
-        section.main_menu {
-            div#main_dishes.main_dishes {
-                div.main_dishes_list{
-                    height: 250px;
-                    align-items: flex-start;
-                    div.main_dishes_foto {
-                        width: 100%;
-                        height: 100px;
-                        flex-direction: column;
-                        flex-wrap: nowrap;
-                        align-items: center;
-                        justify-content: flex-start;
-                        align-content: flex-start;
+
+    html {
+        main {
+            div.restaurant_content {
+                border-right: unset;
+            }
+
+            section.main_menu {
+                div#main_dishes.main_dishes {
+                    div.main_dishes_list {
+                        height: 250px;
+                        align-items: flex-start;
+
+                        div.main_dishes_foto {
+                            width: 100%;
+                            height: 100px;
+                            flex-direction: column;
+                            flex-wrap: nowrap;
+                            align-items: center;
+                            justify-content: flex-start;
+                            align-content: flex-start;
+                        }
+                    }
+                }
+
+                div#soup.soup {
+                    div.soup_list {
+                        height: 250px;
+                        align-items: flex-start;
+
+                        div.soup_foto {
+                            width: 100%;
+                            height: 100px;
+                            flex-direction: column;
+                            flex-wrap: nowrap;
+                            align-items: center;
+                            justify-content: flex-start;
+                            align-content: flex-start;
+                        }
+                    }
+                }
+
+                div#desserts.desserts {
+                    div.desserts_list {
+                        height: 250px;
+                        align-items: flex-start;
+
+                        div.desserts_foto {
+                            width: 100%;
+                            height: 100px;
+                            flex-direction: column;
+                            flex-wrap: nowrap;
+                            align-items: center;
+                            justify-content: flex-start;
+                            align-content: flex-start;
+                        }
                     }
                 }
             }
-            div#soup.soup {
-                div.soup_list{
-                    height: 250px;
-                    align-items: flex-start;
-                    div.soup_foto {
-                        width: 100%;
-                        height: 100px;
-                        flex-direction: column;
-                        flex-wrap: nowrap;
-                        align-items: center;
-                        justify-content: flex-start;
-                        align-content: flex-start;
-                    }
+
+            div.button_cart {
+                position: sticky;
+                bottom: 0;
+                background-color: var(--cart_button_background);
+                height: 50px;
+                width: 250px;
+                border-radius: 25px;
+                border: 4px solid var(--border-color);
+                display: flex;
+                align-items: center;
+                align-content: center;
+                justify-content: space-around;
+                flex-wrap: nowrap;
+                flex-direction: row;
+                cursor: pointer;
+
+                span {
+                    color: var(--orange);
+                    font-size: 20px;
+                    margin-left: 10px;
+                }
+
+                img {
+                    height: 34px;
+                }
+
+                a {
+                    width: 34px;
                 }
             }
-            div#desserts.desserts {
-                div.desserts_list{
-                    height: 250px;
-                    align-items: flex-start;
-                    div.desserts_foto {
-                        width: 100%;
-                        height: 100px;
-                        flex-direction: column;
-                        flex-wrap: nowrap;
-                        align-items: center;
-                        justify-content: flex-start;
-                        align-content: flex-start;
-                    }
-                }
+
+            div.button_cart:hover {
+                -webkit-filter: drop-shadow(1px 1px 5px var(--black));
+                filter: drop-shadow(1px 1px 1px var(--black));
             }
-        }
-        div.button_cart{
-            position: sticky;
-            bottom: 0;
-            background-color: var(--cart_button_background);
-            height: 50px;
-            width: 250px;
-            border-radius: 25px;
-            border: 4px solid var(--border-color);
-            display: flex;
-            align-items: center;
-            align-content: center;
-            justify-content: space-around;
-            flex-wrap: nowrap;
-            flex-direction: row;
-            cursor: pointer;
-            span{
-                color: var(--orange);
-                font-size: 20px;
-                margin-left: 10px;
-            }
-            img{
-                height: 34px;
-            }
-            a{
-                width: 34px;
-            }
-        }
-        div.button_cart:hover{
-            -webkit-filter: drop-shadow(1px 1px 5px var(--black));
-            filter: drop-shadow(1px 1px 1px var(--black));
         }
     }
 }
-}
-

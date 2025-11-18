@@ -8,6 +8,7 @@ const PRODUCT_IN_CART = [];
 let totalPrice = 0;
 let deliveryPrice = 5;
 let sumOfDishesPrice = 0;
+var screenWidthToggle = window.matchMedia("(max-width: 767.99px)");
 
 function init() {
     //dataImport();
@@ -42,19 +43,19 @@ function mainContainer() {
     restaurantContentGenerator();
 }
 
-function restaurantContentGenerator(){
+function restaurantContentGenerator() {
     sectionRestaurantName();
     sectionMainMenu();
     document.getElementById("main_wrapper").innerHTML += ORDERED_WINDOW();
 }
 
-function sectionRestaurantName(){
+function sectionRestaurantName() {
     const CONTENT_GENERATOR_REF = document.getElementById("restaurant_content");
     CONTENT_GENERATOR_REF.innerHTML = "";
     CONTENT_GENERATOR_REF.innerHTML = SECTION_RESTAURANT_NAME_TEMPLATE();
 }
 
-function sectionMainMenu(){
+function sectionMainMenu() {
     const CONTENT_GENERATOR_REF = document.getElementById("restaurant_content");
     CONTENT_GENERATOR_REF.innerHTML += SECTION_MAIN_MENU_TEMPLATE();
     dataPreparing();
@@ -66,7 +67,7 @@ function sectionMainMenu(){
     buttonCartShow(totalPrice.toFixed(2));
 }
 
-function dataPreparing(){
+function dataPreparing() {
     for (let i = 0; i < dishes.length; i++) {
         switch (dishes[i].category) {
             case "Hauptgerichte":
@@ -84,49 +85,49 @@ function dataPreparing(){
     }
 }
 
-function mainDishes(){
+function mainDishes() {
     const MAIN_DISHES_GENERATOR_REF = document.getElementById("main_dishes");
-    for (let i = 0; i < MAIN_DISHES.length; i++){
+    for (let i = 0; i < MAIN_DISHES.length; i++) {
         MAIN_DISHES_GENERATOR_REF.innerHTML += MAIN_DISH_TEMPLATE(i);
     }
 }
 
-function soup(){
+function soup() {
     const SOUP_GENERATOR_REF = document.getElementById("soup");
-    for (let i = 0; i < SOUP.length; i++){
+    for (let i = 0; i < SOUP.length; i++) {
         SOUP_GENERATOR_REF.innerHTML += SOUP_TEMPLATE(i);
     }
 }
 
-function desserts(){
+function desserts() {
     const DESSERTS_GENERATOR_REF = document.getElementById("desserts");
-    for (let i = 0; i < DESSERTS.length; i++){
+    for (let i = 0; i < DESSERTS.length; i++) {
         DESSERTS_GENERATOR_REF.innerHTML += DESSERTS_TEMPLATE(i);
     }
 }
 
-function cartGenerator(){
+function cartGenerator() {
     const CART_GENERATOR_REF = document.getElementById("main_wrapper");
     CART_GENERATOR_REF.innerHTML += CART_TEMPLATE();
     document.getElementById("cart").innerHTML += BUTTON_BACK_TO_ORDERING();
     cartRender();
 }
 
-function addToCart(index){
+function addToCart(index) {
     let dish = index;
     let id = index.match(/\d+/g);
     if (dish.includes("mainDishes")) {
         addingMainDishes(id);
     } else if (dish.includes("soup")) {
         addingSoup(id);
-    } else if (dish.includes("dessert")){
+    } else if (dish.includes("dessert")) {
         addingDesserts(id);
-    } else{
+    } else {
         return;
     }
 }
 
-function cartRender(){
+function cartRender() {
     const CART_RENDER_REF = document.getElementById("cart_dishes_list");
     CART_RENDER_REF.innerHTML = "";
     if (PRODUCT_IN_CART.length == 0) {
@@ -134,7 +135,7 @@ function cartRender(){
         document.getElementById("cart_empty").style.alignItems = "center";
         buttonOrderShow();
     }
-    else{
+    else {
         for (let i = 0; i < PRODUCT_IN_CART.length; i++) {
             CART_RENDER_REF.innerHTML += CART_ITEM_TEMPLATE(i);
         }
@@ -142,8 +143,7 @@ function cartRender(){
     }
 }
 
-function cartShow(){
-    console.log("click");
+function cartShow() {
     document.getElementById("cart").style.display = "unset";
     document.getElementById("cart").style.position = "fixed";
     document.getElementById("cart").style.width = "100vw";
@@ -154,7 +154,7 @@ function cartShow(){
     document.getElementById("button_cart").style.display = "none";
 }
 
-function cartClose(){
+function cartClose() {
     document.getElementById("cart").style.display = "";
     document.getElementById("cart").style.position = "sticky";
     document.getElementById("cart").style.width = "300px";
@@ -162,67 +162,69 @@ function cartClose(){
     document.getElementById("cart").style.background = "";
     document.getElementById("cart").style.padding = ""
     document.body.style.overflow = "unset";
-    document.getElementById("button_cart").style.display = "flex";
-    document.getElementById("button_cart_test").display = "none";
+    document.getElementById("button_cart_resp").display = "none";
+    if (screenWidthToggle.matches) {
+        document.getElementById("button_cart").style.display = "flex";
+    }
 }
 
-function buttonUpShow(){
+function buttonUpShow() {
     const BUTTON_UP_REF = document.getElementById("cart");
     BUTTON_UP_REF.innerHTML += BUTTON_UP();
 }
 
-function buttonCartShow(value){
+function buttonCartShow(value) {
     const BUTTON_CART_SHOW_REF = document.getElementById("main_wrapper");
     BUTTON_CART_SHOW_REF.parentNode.innerHTML += BUTTON_CART(value);
 }
 
 function buttonOrderShow() {
     const BUTTON_ORDER_REF = document.getElementById("button_order");
-    if(PRODUCT_IN_CART.length < 1){
+    if (PRODUCT_IN_CART.length < 1) {
         BUTTON_ORDER_REF.classList.add("hidden");
-    } else{
+    } else {
         BUTTON_ORDER_REF.classList.remove("hidden");
     }
 }
 
-function addingMainDishes(id){
-    let newID = PRODUCT_IN_CART.findIndex((element) => {return element["name"] == MAIN_DISHES[id].name});
-    if(newID > -1){
+function addingMainDishes(id) {
+    let newID = PRODUCT_IN_CART.findIndex((element) => { return element["name"] == MAIN_DISHES[id].name });
+    if (newID > -1) {
         PRODUCT_IN_CART[newID].amount += 1;
-    } else{
+    } else {
         PRODUCT_IN_CART.push(MAIN_DISHES[id]);
         PRODUCT_IN_CART[PRODUCT_IN_CART.length - 1].amount = 1;
     }
     cartRender();
 }
 
-function addingSoup(id){
-    let newID = PRODUCT_IN_CART.findIndex((element) => {return element["name"] == SOUP[id].name});
-    if(newID > -1){
+function addingSoup(id) {
+    let newID = PRODUCT_IN_CART.findIndex((element) => { return element["name"] == SOUP[id].name });
+    if (newID > -1) {
         PRODUCT_IN_CART[newID].amount += 1;
-    } else{
+    } else {
         PRODUCT_IN_CART.push(SOUP[id]);
         PRODUCT_IN_CART[PRODUCT_IN_CART.length - 1].amount = 1;
     }
     cartRender();
 }
 
-function addingDesserts(id){
-    let newID = PRODUCT_IN_CART.findIndex((element) => {return element["name"] == DESSERTS[id].name});
-    if(newID > -1){
+function addingDesserts(id) {
+    let newID = PRODUCT_IN_CART.findIndex((element) => { return element["name"] == DESSERTS[id].name });
+    if (newID > -1) {
         PRODUCT_IN_CART[newID].amount += 1;
-    } else{
+    } else {
         PRODUCT_IN_CART.push(DESSERTS[id]);
         PRODUCT_IN_CART[PRODUCT_IN_CART.length - 1].amount = 1;
     }
     cartRender();
 }
 
-function sumOfProductPrice(){
+function sumOfProductPrice() {
     let sumOfDishesTemp = [];
     for (let i = 0; i < PRODUCT_IN_CART.length; i++) {
         sumOfDishesTemp.push(PRODUCT_IN_CART[i].amount * PRODUCT_IN_CART[i].price);
-        }
+    }
     sumOfDishesPrice = 0;
     for (let j = 0; j < sumOfDishesTemp.length; j++) {
         sumOfDishesPrice += sumOfDishesTemp[j];
@@ -233,14 +235,14 @@ function sumOfProductPrice(){
     buttonOrderShow();
 }
 
-function cleaningPriceValues(){
+function cleaningPriceValues() {
     document.getElementById("cart_subtotal").innerHTML = "";
     document.getElementById("cart_delivery").innerHTML = "";
     document.getElementById("cart_total").innerHTML = "";
     document.getElementById("button_cart_responsive").innerHTML = "";
 }
 
-function setNewPriceValues(){
+function setNewPriceValues() {
     totalPrice = sumOfDishesPrice + deliveryPrice;
     document.getElementById("cart_subtotal").innerHTML = `${sumOfDishesPrice.toFixed(2)}€`;
     document.getElementById("cart_delivery").innerHTML = `${deliveryPrice.toFixed(2)}€`;
@@ -248,23 +250,23 @@ function setNewPriceValues(){
     document.getElementById("button_cart_responsive").innerHTML = `Warenkorb (${totalPrice.toFixed(2)}€)`;
 }
 
-function deliveryPriceSet(){
-    if(sumOfDishesPrice >= 20){
+function deliveryPriceSet() {
+    if (sumOfDishesPrice >= 20) {
         deliveryPrice = 0;
-    } else{
+    } else {
         deliveryPrice = 5;
     }
 }
 
-function addingDishesInCart(index){
-    PRODUCT_IN_CART[index].amount ++;
+function addingDishesInCart(index) {
+    PRODUCT_IN_CART[index].amount++;
     cartRender();
 }
 
 function removingDishesFromCart(index) {
-    if(PRODUCT_IN_CART[index].amount == 1){
+    if (PRODUCT_IN_CART[index].amount == 1) {
         deleteDishFromCart(index);
-    } else{
+    } else {
         PRODUCT_IN_CART[index].amount--;
     }
     cartRender();
@@ -272,23 +274,11 @@ function removingDishesFromCart(index) {
 
 function deleteDishFromCart(index) {
     PRODUCT_IN_CART.splice(index, 1);
-    if(PRODUCT_IN_CART.length == 0){
+    if (PRODUCT_IN_CART.length == 0) {
         sumOfDishesPrice = 0;
         deliveryPrice = 0;
         setNewPriceValues();
     }
-    cartRender();
-}
-
-function reset(){
-    const DIALOGREF = document.getElementById("myDialog"); 
-    PRODUCT_IN_CART.length = 0;
-    totalPrice = 0;
-    deliveryPrice = 0;
-    sumOfDishesPrice = 0;
-    setNewPriceValues();
-    DIALOGREF.close();
-    DIALOGREF.classList.remove("opened");
     cartRender();
 }
 
@@ -297,6 +287,39 @@ function order() {
     DIALOGREF.showModal();
     DIALOGREF.classList.add("opened");
 }
+
+function reset() {
+    const DIALOGREF = document.getElementById("myDialog");
+    PRODUCT_IN_CART.length = 0;
+    totalPrice = 0;
+    deliveryPrice = 0;
+    sumOfDishesPrice = 0;
+    setNewPriceValues();
+    DIALOGREF.close();
+    DIALOGREF.classList.remove("opened");
+    cartClose();
+    cartRender();
+}
+
+function myFunction(screenWidthToggle) {
+    if (screenWidthToggle.matches) {
+        document.getElementById("button_cart").style.display = "flex";
+    } else {
+        cartClose();
+        document.getElementById("button_cart").style.display = "none";
+    }
+}
+
+screenWidthToggle.addEventListener("change", function () {
+    myFunction(screenWidthToggle);
+});
+
+
+
+
+
+
+
 
 /*
 //zapisywanie tylko tego, co jest w koszyku

@@ -1,4 +1,4 @@
-const MAIN_CONTAINER_TEMPLATE = () =>`
+const MAIN_CONTAINER_TEMPLATE = () => `
     <div class="restaurant_content" id="restaurant_content"></div>
 `;
 
@@ -28,7 +28,7 @@ const SECTION_RESTAURANT_NAME_TEMPLATE = () => `
     </section>
 `;
 
-const SECTION_MAIN_MENU_TEMPLATE = () =>`
+const SECTION_MAIN_MENU_TEMPLATE = () => `
     <section class="main_menu">
         <div class="main_dishes" id="main_dishes">
             <div class="foto_main_dishes">
@@ -57,7 +57,7 @@ const SECTION_MAIN_MENU_TEMPLATE = () =>`
     </section>
 `;
 
-const MAIN_DISH_TEMPLATE = (i) =>`
+const MAIN_DISH_TEMPLATE = (i) => `
     <div id="mainDish_id${i}">
         <div class="main_dishes_list">
             <div class="main_dishes_foto">
@@ -76,7 +76,7 @@ const MAIN_DISH_TEMPLATE = (i) =>`
     </div>
 `;
 
-const SOUP_TEMPLATE = (i) =>`
+const SOUP_TEMPLATE = (i) => `
     <div id="soup_id${i}">
         <div class="soup_list">
             <div class="soup_foto">
@@ -95,7 +95,7 @@ const SOUP_TEMPLATE = (i) =>`
     </div>
 `;
 
-const DESSERTS_TEMPLATE = (i) =>`
+const DESSERTS_TEMPLATE = (i) => `
     <div id="dessert_id${i}">
         <div class="desserts_list">
             <div class="desserts_foto">
@@ -114,7 +114,7 @@ const DESSERTS_TEMPLATE = (i) =>`
     </div>
 `;
 
-const CART_TEMPLATE = () =>`
+const CART_TEMPLATE = () => `
     <section class="cart" id="cart">
         <div class="cart_title">
             <h2>Warenkorb</h2>
@@ -138,7 +138,7 @@ const CART_TEMPLATE = () =>`
     </section>
 `;
 
-const CART_ITEM_TEMPLATE = (i) =>`
+const CART_ITEM_TEMPLATE = (i) => `
     <div class="cart_item_list" id="0">
         <div class="cart_item_title">
             <p id="cart_item_title">${PRODUCT_IN_CART[i].name}</p>
@@ -159,7 +159,7 @@ const CART_ITEM_TEMPLATE = (i) =>`
     </div>
 `;
 
-const CART_EMPTY = () =>`
+const CART_EMPTY = () => `
     <div class="cart_item_list" id = "cart_empty">
         <div class="cart_item_title_empty">
             <p>Wähle leckere Gerichte aus der Speisekarte und bestelle Dein Menü.</p>
@@ -170,7 +170,7 @@ const CART_EMPTY = () =>`
     </div>        
 `;
 
-const BUTTON_UP = () =>`
+const BUTTON_UP = () => `
     <div class="button_up tooltip">
         <a href="#">
             <img src="./assets/img/to_up.png" alt="zum Seitenanfang">
@@ -179,7 +179,7 @@ const BUTTON_UP = () =>`
     </div>
 `;
 
-const BUTTON_CART = () =>`
+const BUTTON_CART = () => `
     <div class="button_cart" id="button_cart">
         <span id = "button_cart_responsive" onclick="cartShow()">Warenkorb (0.00€)</span>
         <div class="button_up tooltip">
@@ -191,7 +191,7 @@ const BUTTON_CART = () =>`
     </div>    
 `;
 
-const ORDERED_WINDOW = () =>`
+const ORDERED_WINDOW = () => `
     <dialog id="myDialog">
         <h2>Der Testauftrag wurde angenommen.</h2>
         <p>Vielen Dank für Ihre Testbestellung.</p> 
@@ -202,8 +202,9 @@ const ORDERED_WINDOW = () =>`
     </dialog>     
 `;
 
-const BUTTON_BACK_TO_ORDERING = () =>`
-    <div class="button_cart" id="button_cart_test">
-        <span onclick="cartClose()">Züruck zum einkaufen</span>        
+const BUTTON_BACK_TO_ORDERING = () => `
+    <div class="button_cart" id="button_cart_resp">
+        <span onclick="cartClose()">Zurück zur Speisenauswahl</span>        
     </div>   
 `;
+
