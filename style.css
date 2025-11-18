@@ -55,7 +55,6 @@
     align-items: center;
     transform: translate(-50%, -50%);
     background-color: var(--orange);
-
 }
 
 #myDialog {
@@ -77,8 +76,6 @@
     div {
         margin: 6px 20px
     }
-
-    ;
 }
 
 #myDialog::backdrop {
@@ -178,6 +175,7 @@ footer {
 }
 
 @media (min-width: 768px) and (max-width: 1280.9px) {
+    
     html {
         main {
             div.wrapper {
@@ -210,6 +208,7 @@ footer {
 }
 
 @media (max-width: 767.99px) {
+
     .tooltiptext {
         left: -50px;
     }

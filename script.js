@@ -150,7 +150,7 @@ function cartShow() {
     document.getElementById("cart").style.height = "100vh";
     document.getElementById("cart").style.background = "var(--white)";
     document.getElementById("cart").style.padding = "20px"
-    document.body.style.overflow = "hidden";
+    document.body.style.overflow = "clip";
     document.getElementById("button_cart").style.display = "none";
 }
 
@@ -161,7 +161,7 @@ function cartClose() {
     document.getElementById("cart").style.height = "40vw";
     document.getElementById("cart").style.background = "";
     document.getElementById("cart").style.padding = ""
-    document.body.style.overflow = "unset";
+    document.body.style.overflow = "auto";
     document.getElementById("button_cart_resp").display = "none";
     if (screenWidthToggle.matches) {
         document.getElementById("button_cart").style.display = "flex";
@@ -286,6 +286,7 @@ function order() {
     const DIALOGREF = document.getElementById("myDialog");
     DIALOGREF.showModal();
     DIALOGREF.classList.add("opened");
+    document.body.style.overflow = "clip";
 }
 
 function reset() {
@@ -297,6 +298,7 @@ function reset() {
     setNewPriceValues();
     DIALOGREF.close();
     DIALOGREF.classList.remove("opened");
+    document.body.style.overflow = "auto";
     cartClose();
     cartRender();
 }

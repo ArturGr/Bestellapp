@@ -1,6 +1,7 @@
 html {
     main {
         div.restaurant_content {
+            width: calc(100% - 300px);
             border-right: 4px solid var(--border-color);
         }
 
@@ -570,6 +571,7 @@ html {
 }
 
 @media (max-width: 767.99px) {
+    
     section#cart.cart {
         display: none;
 
@@ -582,6 +584,7 @@ html {
         main {
             div.restaurant_content {
                 border-right: unset;
+                width: 100%;
             }
 
             section.main_menu {
