@@ -1,5 +1,5 @@
-let myDataLocal = [];
-let myPriceLocal = 0;
+let myDataLocalBestellapp = [];
+let myPriceLocalBestellapp = 0;
 const MAIN_DISHES = [];
 const SOUP = [];
 const DESSERTS = [];
@@ -16,11 +16,11 @@ function init() {
 
 function dataImport() {
     getFromLocalStorage();
-    if (myDataLocal.length > 0) {
-        for (let i = 0; i < myDataLocal.length; i++) {
-            PRODUCT_IN_CART.push(myDataLocal[i]);
+    if (myDataLocalBestellapp.length > 0) {
+        for (let i = 0; i < myDataLocalBestellapp.length; i++) {
+            PRODUCT_IN_CART.push(myDataLocalBestellapp[i]);
         }
-        totalPrice = myPriceLocal;
+        totalPrice = myPriceLocalBestellapp;
     } else {
         return;
     }
@@ -321,7 +321,7 @@ screenWidthToggle.addEventListener("change", function () {
 });
 
 function saveData() {
-    if (myDataLocal != null) {
+    if (myDataLocalBestellapp != null) {
         saveToLocalStorage();
     } else {
         return console.log("Data saving error");
@@ -329,16 +329,16 @@ function saveData() {
 }
 
 function saveToLocalStorage() {
-    localStorage.setItem("myDataLocal", JSON.stringify(PRODUCT_IN_CART));
-    localStorage.setItem("myPriceLocal", JSON.stringify(totalPrice))
+    localStorage.setItem("myDataLocalBestellapp", JSON.stringify(PRODUCT_IN_CART));
+    localStorage.setItem("myPriceLocalBestellapp", JSON.stringify(totalPrice))
 }
 
 function getFromLocalStorage() {
-    let myData = JSON.parse(localStorage.getItem("myDataLocal"));
-    let myPrice = JSON.parse(localStorage.getItem("myPriceLocal"));
+    let myData = JSON.parse(localStorage.getItem("myDataLocalBestellapp"));
+    let myPrice = JSON.parse(localStorage.getItem("myPriceLocalBestellapp"));
     if (myData == null) {
         return;
     }
-    myDataLocal = myData;
-    myPriceLocal = myPrice;
+    myDataLocalBestellapp = myData;
+    myPriceLocalBestellapp = myPrice;
 }
